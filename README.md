@@ -1,194 +1,193 @@
-📘 Judul Proyek
+# 📘 Prediksi Efisiensi Energi Bangunan Menggunakan Machine Learning dan Deep Learning
 
-Prediksi Efisiensi Energi Bangunan Menggunakan Metode Machine Learning dan Deep Learning
+## 👤 Informasi
+- **Nama:** Ergi Zenila Marta Sasmige  
+- **NIM:** 233307010  
+- **Program Studi:** Teknologi Informasi  
+- **Mata Kuliah:** Data Science  
+- **Dosen Pengampu:** Gus Nanang Syaifuddiin  
+- **Repository:** [https://github.com/ergizenila/energy-efficiency-prediction](https://github.com/ergizenila/energy-efficiency-prediction)  
+- **Video Presentasi:** [https://youtu.be/](https://youtu.be/) *(ganti dengan link video penjelasan proyek)*  
 
-👤 Informasi
+---
 
-Nama: Ergi Zenila Marta Sasmige
+## 🎯 1. Ringkasan Proyek
+Proyek ini bertujuan untuk **memprediksi efisiensi energi bangunan** menggunakan *Energy Efficiency Dataset* dari UCI Machine Learning Repository.  
+Fokus utama adalah memprediksi **Heating Load** berdasarkan parameter fisik bangunan seperti luas permukaan, tinggi, orientasi, dan area kaca.  
 
-NIM: 233307010
+Tahapan utama yang dilakukan:
+- Analisis dan eksplorasi data (EDA)  
+- Data preprocessing dan normalisasi  
+- Pembangunan tiga model pembelajaran:
+  - **Baseline:** Linear Regression  
+  - **Advanced ML:** Random Forest Regressor  
+  - **Deep Learning:** Multilayer Perceptron (MLP)
+- Evaluasi model menggunakan metrik regresi  
+- Penentuan model terbaik berdasarkan performa  
 
-Program Studi: Teknologi Informasi
+---
 
-Dosen Pengampu: Gus Nanang Syaifuddiin
+## 📄 2. Problem & Goals
 
-Repo: https://github.com/ergizenila/energy-efficiency-prediction
- (ganti dengan URL asli GitHub milik Tuan Putri)
+### **Problem Statements**
+- Bagaimana cara memprediksi kebutuhan energi pemanasan pada bangunan berdasarkan parameter fisiknya?  
+- Bagaimana performa model machine learning dan deep learning dalam mempelajari hubungan non-linear antar fitur?  
+- Model mana yang paling akurat dan efisien dalam memprediksi Heating Load?
 
-Video: https://youtu.be/
- (ganti dengan URL video penjelasan proyek)
+### **Goals**
+- Membangun model prediksi efisiensi energi dengan akurasi tinggi (**R² > 0.90**).  
+- Membandingkan performa tiga pendekatan model (Baseline, Advanced ML, Deep Learning).  
+- Menentukan model terbaik berdasarkan metrik **MAE, MSE, RMSE, dan R² Score**.  
+- Menyediakan sistem prediksi yang dapat direproduksi dengan struktur proyek yang terorganisir.  
 
-1. 🎯 Ringkasan Proyek
+---
 
-Proyek ini bertujuan untuk memprediksi efisiensi energi bangunan menggunakan dataset dari UCI Machine Learning Repository.
-Langkah-langkah utama yang dilakukan:
-
-Menganalisis dan memahami dataset (EDA)
-
-Melakukan data preparation (cleaning, scaling, splitting)
-
-Membangun tiga model pembelajaran:
-
-Model 1: Linear Regression (Baseline)
-
-Model 2: Random Forest Regressor (Advanced)
-
-Model 3: Multilayer Perceptron (Deep Learning)
-
-Melakukan evaluasi model dan menentukan model terbaik berdasarkan metrik regresi
-
-2. 📄 Problem & Goals
-
-Problem Statements:
-
-Bagaimana cara memprediksi kebutuhan energi pemanasan (Heating Load) dan pendinginan (Cooling Load) pada bangunan berdasarkan karakteristik fisiknya?
-
-Bagaimana performa model machine learning dan deep learning dalam memahami hubungan non-linear antar fitur pada data efisiensi energi?
-
-Model apa yang memberikan hasil prediksi paling akurat dan efisien?
-
-Goals:
-
-Membangun model prediksi efisiensi energi dengan akurasi tinggi (R² > 0.90).
-
-Membandingkan performa tiga pendekatan (Baseline, Advanced ML, Deep Learning).
-
-Menentukan model terbaik berdasarkan metrik MAE, MSE, RMSE, dan R² Score.
-
-📁 Struktur Folder
+## 📁 3. Struktur Folder
+```
 energy-efficiency-prediction/
 │
-├── data/                        # Dataset (tidak di-commit)
-│   └── ENB2012_data.csv
+├── data/ # Dataset (tidak di-commit)
+│ └── ENB2012_data.xlsx
 │
-├── notebooks/                   # Notebook utama
-│   └── energy_efficiency_project.ipynb
+├── notebooks/ # Notebook utama proyek
+│ └── EnergyEfficiency_Project.ipynb
 │
-├── src/                         # Script modular
-│   ├── data_preparation.py
-│   ├── model_training.py
-│   ├── evaluation.py
+├── src/ # Script modular
+│ ├── data_preprocessing.py
+│ ├── modeling.py
+│ ├── evaluation.py
 │
-├── models/                      # Model yang disimpan
-│   ├── model_baseline.pkl
-│   ├── model_rf.pkl
-│   └── model_mlp.h5
+├── models/ # Model yang disimpan
+│ ├── model_linear.pkl
+│ ├── model_rf.pkl
+│ └── model_mlp.h5
 │
-├── images/                      # Visualisasi hasil
-│   ├── heatmap_correlation.png
-│   ├── feature_importance.png
-│   ├── model_comparison.png
+├── images/ # Visualisasi hasil analisis
+│ ├── heatmap_correlation.png
+│ ├── feature_importance.png
+│ ├── model_comparison.png
+│ ├── training_loss_accuracy.png
 │
-├── requirements.txt             # Library dan versi
+├── requirements.txt # Daftar dependencies
 ├── .gitignore
 └── README.md
+```
 
-3. 📊 Dataset
+---
 
-Sumber: UCI Machine Learning Repository – Energy Efficiency Dataset
+## 📊 4. Dataset
+- **Sumber:** [UCI Machine Learning Repository – Energy Efficiency Dataset](https://archive.ics.uci.edu/dataset/242/energy+efficiency)  
+- **Jumlah data:** 768 baris × 10 kolom  
+- **Tipe data:** Tabular (numerik)  
+- **Format:** `.xlsx` / `.csv`  
 
-Jumlah Data: 768 baris × 10 kolom
+### **Deskripsi Fitur**
+| Fitur | Deskripsi |
+|-------|------------|
+| Relative Compactness | Tingkat kekompakan bentuk bangunan |
+| Surface Area | Luas total permukaan bangunan (m²) |
+| Wall Area | Luas dinding bangunan (m²) |
+| Roof Area | Luas atap bangunan (m²) |
+| Overall Height | Tinggi bangunan (m) |
+| Orientation | Arah orientasi bangunan (1–4) |
+| Glazing Area | Luas area kaca (proporsi) |
+| Glazing Area Distribution | Distribusi area kaca (0–5) |
+| Heating Load | Kebutuhan energi untuk pemanasan (kWh/m²) |
+| Cooling Load | Kebutuhan energi untuk pendinginan (kWh/m²) |
 
-Tipe Data: Tabular (numerik)
+---
 
-Format File: CSV
-
-Fitur Utama
-Fitur	Deskripsi
-Relative Compactness	Tingkat kekompakan bentuk bangunan
-Surface Area	Luas total permukaan bangunan (m²)
-Wall Area	Luas dinding bangunan (m²)
-Roof Area	Luas atap (m²)
-Overall Height	Tinggi bangunan (m)
-Orientation	Arah orientasi bangunan (1–4)
-Glazing Area	Luas area kaca (proporsi)
-Glazing Area Distribution	Distribusi area kaca (0–5)
-Heating Load	Kebutuhan energi untuk pemanasan (kWh/m²)
-Cooling Load	Kebutuhan energi untuk pendinginan (kWh/m²)
-4. 🔧 Data Preparation
+## 🔧 5. Data Preparation
 
 Langkah-langkah:
+- **Data Cleaning:** Tidak ditemukan missing values atau duplikasi data.  
+- **Feature Scaling:** Normalisasi menggunakan `StandardScaler`.  
+- **Data Splitting:** Pembagian data menjadi 80% train dan 20% test (random_state=42).  
+- **Balancing:** Tidak diperlukan karena target bersifat kontinu (regresi).  
 
-Cleaning: Tidak ditemukan missing values atau duplikat data.
+---
 
-Transformation: Normalisasi menggunakan MinMaxScaler untuk menyamakan skala antar fitur.
+## 🤖 6. Modeling
 
-Splitting: Pembagian data 80% untuk training dan 20% untuk testing.
+### **Model 1 – Baseline**
+**Linear Regression**
+- Sederhana dan efisien untuk memodelkan hubungan linear antar fitur.  
+- Digunakan sebagai acuan awal sebelum mencoba model kompleks.
 
-Balancing: Tidak diperlukan karena target berupa nilai kontinu.
+### **Model 2 – Advanced ML**
+**Random Forest Regressor**
+- Menangkap hubungan non-linear antar fitur.  
+- Parameter utama:
+  - n_estimators = 100  
+  - max_depth = 10  
+  - random_state = 42  
 
-5. 🤖 Modeling
+### **Model 3 – Deep Learning**
+**Multilayer Perceptron (MLP)**
+- Arsitektur:
+  - Dense(128, ReLU)  
+  - Dropout(0.3)  
+  - Dense(64, ReLU)  
+  - Dropout(0.3)  
+  - Dense(1, Linear)
+- Optimizer: Adam  
+- Loss Function: MSE  
+- Epochs: 50  
+- Batch Size: 32  
+- Validation Split: 0.2  
 
-Model 1 – Baseline: Linear Regression
+---
 
-Sederhana, digunakan sebagai pembanding awal.
+## 🧪 7. Evaluation
 
-Model 2 – Advanced ML: Random Forest Regressor
+### **Metrik yang Digunakan**
+- MAE (Mean Absolute Error)  
+- MSE (Mean Squared Error)  
+- RMSE (Root Mean Squared Error)  
+- R² Score  
 
-Menangkap hubungan non-linear antar fitur dan lebih akurat.
+### **Hasil Evaluasi**
+| Model | MAE | MSE | RMSE | R² |
+|--------|-----|-----|------|----|
+| Linear Regression | 2.10 | 8.40 | 2.90 | 0.89 |
+| Random Forest | 1.20 | 4.10 | 2.02 | 0.96 |
+| MLP (Deep Learning) | 1.05 | 3.60 | 1.90 | 0.97 |
 
-Model 3 – Deep Learning: Multilayer Perceptron (MLP)
+📈 Visualisasi Perbandingan:  
+- Disimpan di `images/model_comparison.png`  
+- Grafik Loss/Accuracy pada `images/training_loss_accuracy.png`  
 
-Menggunakan 3 hidden layers dengan dropout untuk mencegah overfitting.
+---
 
-6. 🧪 Evaluation
+## 🏁 8. Kesimpulan
 
-Metrik Regresi:
+- **Model Terbaik:** Multilayer Perceptron (MLP)  
+- **Performa:**  
+  - R² = **0.97**  
+  - RMSE = **1.90**  
+  - MAE = **1.05**  
 
-MAE (Mean Absolute Error)
+**Insight:**
+- Fitur *Relative Compactness* paling berpengaruh terhadap efisiensi energi.  
+- Model *Deep Learning (MLP)* menunjukkan performa terbaik dibandingkan model linear dan tree-based.  
+- Dataset dengan pola non-linear lebih cocok dimodelkan menggunakan pendekatan neural network.  
 
-MSE (Mean Squared Error)
+---
 
-RMSE (Root Mean Squared Error)
+## 🔮 9. Future Work
+- [✅] Tambah variasi dan jumlah data  
+- [✅] Melakukan hyperparameter tuning lebih lanjut  
+- [✅] Mencoba arsitektur deep learning lain (Autoencoder / CNN1D)  
+- [✅] Deploy model menggunakan Streamlit atau Flask untuk tampilan web interaktif  
 
-R² Score
+---
 
-Hasil Evaluasi
-Model	MAE	MSE	RMSE	R²	Catatan
-Linear Regression	2.10	8.40	2.90	0.89	Baseline
-Random Forest	1.20	4.10	2.02	0.96	Peningkatan signifikan
-MLP (Deep Learning)	1.05	3.60	1.90	0.97	Model terbaik
-7. 🏁 Kesimpulan
+## 🔁 10. Reproducibility
 
-Model terbaik: Multilayer Perceptron (MLP)
+### **Environment**
+```bash
+python -m venv venv
+venv\Scripts\activate
 
-Alasan: Mempunyai nilai R² tertinggi (0.97) dan error terendah (MAE = 1.05).
-
-Insight penting:
-
-Fitur Relative Compactness memiliki pengaruh terbesar terhadap efisiensi energi.
-
-Model kompleks (MLP) lebih unggul dibanding model linier sederhana.
-
-8. 🔮 Future Work
-
- Menambah variasi dan jumlah data
-
- Melakukan hyperparameter tuning yang lebih mendalam
-
- Eksperimen dengan arsitektur Deep Learning lain seperti Autoencoder
-
- Deploy model menggunakan Streamlit atau Flask untuk demo web interaktif
-
-9. 🔁 Reproducibility
-
-Environment:
-
-Python 3.10
-
-Dependencies:
-
-numpy==1.24.3
-pandas==2.0.3
-matplotlib==3.7.2
-seaborn==0.12.2
-scikit-learn==1.3.0
-tensorflow==2.14.0
-
-
-Cara Menjalankan:
-
-git clone https://github.com/ergizenila/energy-efficiency-prediction.git
-cd energy-efficiency-prediction
+Install Dependencies:
 pip install -r requirements.txt
-jupyter notebook notebooks/energy_efficiency_project.ipynb
