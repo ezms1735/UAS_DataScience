@@ -6,8 +6,8 @@
 - **Program Studi:** Teknologi Informasi  
 - **Mata Kuliah:** Data Science  
 - **Dosen Pengampu:** Gus Nanang Syaifuddiin  
-- **Repository:** [https://github.com/ergizenila/energy-efficiency-prediction](https://github.com/ergizenila/energy-efficiency-prediction)  
-- **Video Presentasi:** [https://youtu.be/](https://youtu.be/) *(ganti dengan link video penjelasan proyek)*  
+- **Repository:** https://github.com/ezms1735/UAS_DataScience.git
+- **Video Presentasi:** https://drive.google.com/file/d/1CFZO0pL03sq113fp7VaSmOXzUZrHiKU8/view?usp=sharing 
 
 ---
 
@@ -47,26 +47,33 @@ Tahapan utama yang dilakukan:
 energy-efficiency-prediction/
 │
 ├── data/ # Dataset (tidak di-commit)
-│ └── ENB2012_data.xlsx
+│ └── Energy Efficency_data.xlsx
 │
 ├── notebooks/ # Notebook utama proyek
 │ └── EnergyEfficiency_Project.ipynb
 │
 ├── src/ # Script modular
-│ ├── data_preprocessing.py
-│ ├── modeling.py
-│ ├── evaluation.py
 │
 ├── models/ # Model yang disimpan
-│ ├── model_linear.pkl
-│ ├── model_rf.pkl
-│ └── model_mlp.h5
+│ ├── model_lr.pkl
+│ ├── model_mlp.h5
+│ └── model_rf.pkl
 │
 ├── images/ # Visualisasi hasil analisis
-│ ├── heatmap_correlation.png
-│ ├── feature_importance.png
-│ ├── model_comparison.png
-│ ├── training_loss_accuracy.png
+│ ├── cek_outlier.png
+│ ├── deep_learning.png
+│ ├── heatmadp_korelasi.png
+│ ├── linear_regression.png
+│ ├── perbandingan_mae.png
+│ ├── perbandingan_r2.png
+│ ├── prediksi_error_mlp.png
+│ ├── random_forest_regressor.png
+│ ├── training_validation_loss.png
+│ ├── training_validation_mae.png
+│ ├── visualisasi_1.png
+│ ├── visualisasi_2.png
+│ ├── visualisasi_3.png
+│ ├── visualisasi_distribusi.png
 │
 ├── requirements.txt # Daftar dependencies
 ├── .gitignore
