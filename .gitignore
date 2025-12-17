@@ -9,7 +9,6 @@ data/*
 *.xlsx
 *.xls
 *.json
-*.txt
 *.tsv
 *.zip
 *.gz
@@ -34,6 +33,7 @@ __pycache__/
 # VIRTUAL ENV
 # ------------------------------------------------------
 venv/
+env/
 .env/
 *.env
 environment/
